@@ -56,3 +56,17 @@ var mySong = {
     }
 };
 calculatePayOut(mySong);
+var myPointB1 = { x: 1, y: 3 };
+var myPointB2 = { x: 4, y: 19, z: 23 };
+var user = {
+    id: 544,
+    userName: 'Ashish'
+};
+// i can read and change userName 
+user.userName = 'hello world';
+// i can read id 
+console.log(user.id); // sahi hai
+var happyface = {
+    radious: 4,
+    color: 'yellow'
+};
