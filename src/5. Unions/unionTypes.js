@@ -27,3 +27,38 @@ function calulateTax(price, tax) {
         return price * tax;
     }
 }
+/*
+================================
+    Union Types and Arrays
+================================
+*/
+// writing different types data types in one array
+var stuff = [12, 34, 53, 534, 'ashish', true, {}];
+// for specific data types
+var stuff2 = ['ashishi', 344, 'sfas'];
+/*
+================================
+    Literal Types
+================================
+
+Literal types are not just types -but the value themselves too !
+
+on it's own , that's not super helpful.
+but combine it with somthing like unions and you have very fine-tuned type options for Typescript
+to enforce
+*/
+// -----------------------------------------------
+// ex 1
+// A function with a literal + union type parameter 
+var giveAnswer = function (answer) {
+    return "The answer is ".concat(answer);
+};
+//can provide one of the literals in the union
+giveAnswer('no');
+//can't providde anything else
+// giveAnswer('oh boy i m not sure')
+// -----------------------------------------------
+// ex 
+var zero = 0;
+var mood = "Happy";
+var today = " Monday ";
