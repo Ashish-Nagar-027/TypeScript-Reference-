@@ -25,3 +25,11 @@ var Responses;
     Responses[Responses["yes"] = 10] = "yes";
     Responses[Responses["maybe"] = 24] = "maybe";
 })(Responses || (Responses = {}));
+var Arrowkeys;
+(function (Arrowkeys) {
+    Arrowkeys["UP"] = "up";
+    Arrowkeys["DOWN"] = "down";
+    Arrowkeys["RIGHT"] = "right";
+    Arrowkeys["LEFT"] = "left";
+    Arrowkeys[Arrowkeys["ERROR"] = 234] = "ERROR";
+})(Arrowkeys || (Arrowkeys = {}));
