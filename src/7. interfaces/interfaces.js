@@ -32,3 +32,31 @@ var thomasB = {
     }
     // 
 };
+var elton = {
+    name: "Elton",
+    age: 0.5,
+    breed: "Australian Shepherd",
+    bark: function () {
+        return 'woof woof!';
+    }
+};
+var jhonny = {
+    name: 'johney',
+    age: 34,
+    breed: 'lab',
+    bark: function () {
+        return "Bark !";
+    },
+    job: "guide dog",
+    owner: 'i am owner'
+};
+/*
+=============================================
+    Difference between interfaces and types
+=============================================
+
+1. interface  can only decscribe the shape of an object
+2. we can reopen interfaces
+3.we can extend properties from another another interface
+4.
+*/ 
