@@ -1,4 +1,3 @@
-"use strict";
 // in types script we declare a variable by saying that this is string variable. and its always going to be string .
 //  or its number and always a number . same with other data types
 // =============================================================
@@ -19,5 +18,6 @@ var myNumber = 42; // it always going to be number now
 myNumber = 45;
 // i can not redefine it again by making it string
 // with booleans
-var myBooleans = true;
+var myBooleans = false;
 // this boolean always going to be boolean
+var myWorld = 'hello world';

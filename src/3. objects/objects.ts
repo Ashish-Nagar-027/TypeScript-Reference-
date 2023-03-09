@@ -1,6 +1,11 @@
 /* 
 objects can be typed by declaring what the object should like in the annotation.
+
+Accessing a property that isn't defined or performing operations without keeping types in mind will throw errors!
+
 */
+
+
 
 const dog = {
     name: 'Elton',
@@ -8,7 +13,7 @@ const dog = {
     age: 0.5
 }
 
-
+// a function with an object type parameter
 function printName(person: {first: string, last: string}): void {
     console.log(`${person.first} ${person.last}`);
 }
@@ -37,21 +42,21 @@ printName(singer)       //Doable
 
 
 
-
-
-
 /*  
 ===============================
        4. Type Alias
 ==============================
 
-instead of writing out object types in an annotation m we can decalre them separaetly in a type alias, 
+instead of writing out object types in an annotation , we can decalre them separaetly in a type alias, 
 which is simple the desired shape of the object 
 
 This allows us to make our code more readable and even reuse the types
 elsewhere in our code
 */
-type Point  = {x: number; y: number; }
+
+type Point  = {x: number; y: number; }             
+ // i can reuse point 
+
 
 let coordinateA: Point  = {x: 34 , y: 2}
 
@@ -206,4 +211,6 @@ const happyface: ColorFullCircle = {
 
 // if i want to add something extraa
 type somethingExtraa = Circle & ColorFull & { id : number }
+
+
 

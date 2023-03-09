@@ -34,7 +34,7 @@ dosomething('chickenFace', 45, false )
 // default parameters
 
 function greeting(person: string = 'ashish'){
-    return `hello there ${person}`
+    return `hello there ${person}`  
 }
 
 greeting()
@@ -48,7 +48,7 @@ greeting()
 const addNums = (x: number, y: number): number => {
     return x + y
 }
-// its not alwasys necesory because typescipt does it itselt. b but we can do this 
+// its not alwasys necesory because typescipt does it itselt.  but we can do this 
 
 
 
@@ -56,7 +56,7 @@ const addNums = (x: number, y: number): number => {
 //        anonymous function
 // =====================================================
 
-const colors = ['red', 'orange', 'yellow']
+const colors = ['red', 'blue', 'yellow']
 
 colors.map(color => {
     return color.toUpperCase()
@@ -79,6 +79,7 @@ const annoyUser = (num: number): void => {
 function printTwice(msg: string) {
      console.log(msg)
      console.log(msg)
+
     //  this function returns nothing so its void type
 }
 
@@ -90,9 +91,9 @@ function printTwice(msg: string) {
 // ===================================================
 /* 
 
-The Never type represents valuse that Never occur . 
+The Never type represents values that Never occur . 
 we might use it to annotate a function that always throws an exception , 
-or a funtion that never finishes exevuting 
+or a funtion that never finishes executing 
 
 Don't confuse with void - void returns undefined or null, which is technically still a type of value.
 with Never, a function doesn't even finish executing.
@@ -105,7 +106,7 @@ function makeError(msg: string): never {
 }
 
 // or
-
+// it can be function that never stops
 function gameLoop(): never {
     while(true) {
         console.log('game loop running');
@@ -113,3 +114,4 @@ function gameLoop(): never {
     // i can't use return in this function
     // because of never
 }
+

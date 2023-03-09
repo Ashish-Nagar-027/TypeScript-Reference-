@@ -34,8 +34,21 @@ myNumber = 45
 
 
 // with booleans
-const myBooleans: boolean = true 
+const myBooleans: boolean = false 
 
 // this boolean always going to be boolean
+
+
+
+
+//====================================
+// the any type - with typ e any typescript doesn't check type . 
+
+let thing : any  = "hello world"
+thing = 2
+thing = false              // i can only do this with type any
+
+
+ 
 
 
