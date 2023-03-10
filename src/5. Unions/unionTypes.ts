@@ -28,19 +28,29 @@ type Loc = {
     long: number;
 }
 
-let coordinates: PointC | Loc = {x: 1, y:34}
+type stringA = {
+    name: string,
+    lastName: string
+}
+
+let coordinates: PointC | Loc | stringA = {x: 1, y:34}
 coordinates = { lat: 321.213,long: 23.334 }
+coordinates = { name: "ashish", lastName: 'last' }
 
 
-// ex 3 
+ 
 
+// Unions - Narrowing the Type  => Narrowing th Typpe is simply doing a type check before working with a value. if your value is a string you may awant to use it deifferently than if you got a number .  
+
+// since unions allow multiple type for a value , its  good to check what came through before working with it.
+
+// ex  - type narrowing
 function calulateTax(price: number | string, tax: number) {
     if(typeof price === "string") {
-       price.replace("$", "")
+      price= price.replace("$", "")
+      return
     }
-    else {
-        return price * tax
-    }
+    return price * tax
 }
 
 
@@ -61,14 +71,12 @@ const  stuff2 : (number | string)[] = ['ashishi', 344,'sfas']
 
 
 
-
-
 /*
 ================================
     Literal Types
 ================================
 
-Literal types are not just types -but the value themselves too !
+Literal types are not just types - but the value themselves too !
 
 on it's own , that's not super helpful. 
 but combine it with somthing like unions and you have very fine-tuned type options for Typescript 
@@ -91,8 +99,11 @@ giveAnswer('no')
 // -----------------------------------------------
 
 // ex 
-let zero: 0 = 0;
-let mood: 'Happy'| "sad " = "Happy"
+let zero: 0 = 0;    
+// Here 0  is the literal type it can only have value of 0
+
+let mood: 'Happy'| "sad" = "Happy"
+
 
 
 type DayOfWeek = " Monday " | " TuesDay " | "Wednesday " | "Thursday " | "friday " | " saturday" | " sunday " 

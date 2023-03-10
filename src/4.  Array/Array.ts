@@ -3,6 +3,15 @@ Array can typed using a type annotation followed by empty array brackets, like n
 for an Array of numbers
 */
 
+// empty array
+let emptyArray: [] = []
+
+
+
+// any array
+let newArray: any[] = []
+
+
 // string Array 
 let names: string[] = ['hello', 'world'];
 
@@ -16,13 +25,11 @@ const bools: boolean[] = []
 
 
 // AlterNative Syntax
-let Myname: Array < string > = ['hello', 'world' ]
+let Myname: Array <string> = ['hello', 'world' ]
 
-let myAge: Array < number > = [12,34,454,546]
+let myAge: Array <number> = [12,34,454,546]
 
 //note : These array only allow data of that one type inside them
-
-
 
 
 /*
