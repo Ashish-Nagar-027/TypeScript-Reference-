@@ -7,17 +7,17 @@ we can give these constans numeric or string values.
 There's uite a few options when it comes to enums!
 */
 
-// Numeric Enums
+
 enum Resposnse {   
     no,      
     yes,
     maybe
 }
 
-
+// we can assign also values 
 enum Resposnse {
     no_1 = 2,
-    yes_1, 
+    yes_1 = 5, 
     maybe_1
 }
 
@@ -34,3 +34,7 @@ enum Arrowkeys {
     LEFT = 'left',
     ERROR = 234
 }
+
+Arrowkeys.LEFT
+
+
