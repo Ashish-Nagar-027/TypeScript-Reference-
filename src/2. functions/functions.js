@@ -31,11 +31,11 @@ greeting();
 var addNums = function (x, y) {
     return x + y;
 };
-// its not alwasys necesory because typescipt does it itselt. b but we can do this 
+// its not alwasys necesory because typescipt does it itselt.  but we can do this 
 // ===================================================
 //        anonymous function
 // =====================================================
-var colors = ['red', 'orange', 'yellow'];
+var colors = ['red', 'blue', 'yellow'];
 colors.map(function (color) {
     return color.toUpperCase();
 });
@@ -59,9 +59,9 @@ function printTwice(msg) {
 // ===================================================
 /*
 
-The Never type represents valuse that Never occur .
+The Never type represents values that Never occur .
 we might use it to annotate a function that always throws an exception ,
-or a funtion that never finishes exevuting
+or a funtion that never finishes executing
 
 Don't confuse with void - void returns undefined or null, which is technically still a type of value.
 with Never, a function doesn't even finish executing.
@@ -72,6 +72,7 @@ function makeError(msg) {
     throw new Error(msg);
 }
 // or
+// it can be function that never stops
 function gameLoop() {
     while (true) {
         console.log('game loop running');

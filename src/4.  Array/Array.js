@@ -3,6 +3,10 @@
 Array can typed using a type annotation followed by empty array brackets, like number[]
 for an Array of numbers
 */
+// empty array
+var emptyArray = [];
+// any array
+var newArray = [];
 // string Array 
 var names = ['hello', 'world'];
 // number array

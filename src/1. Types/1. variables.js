@@ -1,3 +1,4 @@
+"use strict";
 // in types script we declare a variable by saying that this is string variable. and its always going to be string .
 //  or its number and always a number . same with other data types
 // =============================================================
@@ -20,4 +21,8 @@ myNumber = 45;
 // with booleans
 var myBooleans = false;
 // this boolean always going to be boolean
-var myWorld = 'hello world';
+//====================================
+// the any type - with typ e any typescript doesn't check type . 
+var thing = "hello world";
+thing = 2;
+thing = false; // i can only do this with type any

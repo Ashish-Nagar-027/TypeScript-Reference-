@@ -1,12 +1,16 @@
 "use strict";
 /*
 objects can be typed by declaring what the object should like in the annotation.
+
+Accessing a property that isn't defined or performing operations without keeping types in mind will throw errors!
+
 */
 var dog = {
     name: 'Elton',
     breed: "Australian Shepherd",
     age: 0.5
 };
+// a function with an object type parameter
 function printName(person) {
     console.log("".concat(person.first, " ").concat(person.last));
 }
@@ -23,6 +27,7 @@ function randomCoordinate() {
 // printName( { first: "mick" , last: "jagger", age: 455 } )  // not Doable
 var singer = { first: "mick", last: "jagger", age: 455, isAlive: true };
 printName(singer); //Doable
+// i can reuse point 
 var coordinateA = { x: 34, y: 2 };
 function randomCoordinateA() {
     return { x: Math.random(), y: Math.random() };
