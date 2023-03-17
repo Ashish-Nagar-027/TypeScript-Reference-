@@ -1,214 +1,115 @@
 "use strict";
-
-console.log("classes Recap js");
-
+var _Player_newScore;
+console.log('classes Recap js');
 //  classes are templates for creating objects in javascript . they contain  a few different important pieces which allow for creation and extension of customized (and nicely oraganized) objectts.
-
-// classes allow us to create patterns that  describes objects.
-
-// this is simple class example
+// classes allow us to create patterns that  describes objects. 
 class Player {
-  taunt() {
-    // this is method in classes
-    console.log("Booyah!!");
-  }
-}
-
-const player1 = new Player();
-//player1.taunt(); // its will call methods of class
-
-const player2 = new Player();
-// player2.taunt();
-
-//==========================
-//        constructor
-//==========================
-
-// constructors are methods which automaticly gets call when we call class. we don't need to call these constructor  manually
-
-class GamePlayer {
-  taunt() {
-    console.log("Booyah!!");
-  }
-
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    // console.log("in Constructor ");
-  }
-}
-
-const GamePlayer1 = new GamePlayer("Ashish", "nagar"); // it will automaticly call constructor of class
-
-// console.log(GamePlayer1.lastName);
-// console.log(GamePlayer1.firstName);
-
-const GamePlayer2 = new GamePlayer("colt", "steel");
-
-// console.log(GamePlayer2.firstName);
-// console.log(GamePlayer2.lastName);
-
-//==========================
-//        class fields
-//==========================
-
-class NewGamePlayer {
-  score = 0; // here      we can only use hardcode values
-  numLives = 10;
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    //   this.score = 0;              // its better if we write it on top
-    //   this.numLives = 10;
-  }
-  taunt() {
-    console.log("inside taunt");
-  }
-  loseLife() {
-    this.numLives -= 1;
-  }
-}
-const newGamePlayer1 = new NewGamePlayer();
-console.log(newGamePlayer1.numLives);
-newGamePlayer1.loseLife();
-console.log(newGamePlayer1.numLives);
-
-//==========================
-//      private fields
-//==========================
-
-//from above code
-//write now i can make my score negative . but if its a game score then i would want that it should never be negative.
-newGamePlayer1.score = -2423;
-
-console.log(newGamePlayer1.score);
-
-// to prevent it i have to make it private so that the property can not be change outside of that class
-// i can do that by just writing # in front of property.
-//if i add # in front of any property than that property can not be changed outside of class
-
-class myGamePlayer {
-  #score = 0;
-  numLives = 10;
-  loseLife() {
-    this.numLives -= 1;
-  }
-
-  getScore() {
-    return this.#score;
-  }
-
-  updateScroe(newScore) {
-    this.#score = newScore;
-  }
-
-  // private methods are also posibile like this
-  #secret() {
-    console.log("secret ");
-  }
-}
-
-const myGamePlayer1 = new myGamePlayer();
-
-// now i can not access score outside of class
-
-// to access it we can make new method getScore there
-console.log(myGamePlayer1.getScore());
-
-// to change value of score i can make different types of method inside the class and then i can access those methods outside class
-
-myGamePlayer1.updateScroe(34);
-console.log(myGamePlayer1.getScore());
-
-//============================
-
-//      Getters and  setters
-
-//============================
-
-//  this are like methods which are accessable as properties. we can make them by adding get key word in front of any method. then i can access them outside of class as a property
-
-class myNewGamePlayer {
-  #score = 0;
-  constructor(first, last) {
-    this.first = first;
-    this.last = last;
-  }
-
-  get fullName() {
-    return this.first + " " + this.last;
-  }
-
-  set fullName(newName) {
-    const [first, last] = newName.split(" ");
-    this.first = first;
-    this.last = last;
-  }
-
-  get score() {
-    return this.#score;
-  }
-
-  set score(newScore) {
-    if (newScore < 0) {
-      throw new Error("score must be positive");
+    constructor(first, last) {
+        this.score = 0;
+        _Player_newScore.set(this, 0);
+        this.first = first;
+        this.last = last;
     }
-    this.#score = newScore;
-  }
 }
-
-const myNewGamePlayer1 = new myNewGamePlayer("hello", "world");
-
-console.log(myNewGamePlayer1.fullName); // we can access as property
-myNewGamePlayer1.fullName = "honey singh";
-console.log(myNewGamePlayer1.fullName); // we can access as property
-
-// myNewGamePlayer1.score = 3234;
-// console.log(myNewGamePlayer1.score);
-
-//============================
-
-//      static keyword
-
-//============================
-
-// we can use static key in front any method or property of class to tell javascipt that this method or property does not exist in  individual instances. but it belongs to class itself.
-
-class starPlayer {
-  description = "description is accesable in every instance of this class";
-  static Newdescription =
-    "new description is  not accesable in every instance of this class";
+_Player_newScore = new WeakMap();
+const elton = new Player("Elton", "Steele");
+// i can also make properties and readonly 
+//  we can make properties of class private or public . this idea only exist in ts ,not in js.
+// by default in js and in ts every single method or property in considerd as public .
+// private properties are only accessable inside the class.
+// we can also make private properties  with js syntax (using )
+// ===========================================
+//       parameters properties shorthand 
+// ===========================================
+// we can also write above code like this in sorthand
+class NewPlayer {
+    // readonly first: string;     
+    // public last:string;        
+    // private score : number = 0        
+    // #newScore : number = 0        
+    // constructor(first: string, last: string){
+    //     this.first = first;
+    //     this.last = last;
+    // }
+    constructor(first, last, score) {
+        this.score = score;
+    }
 }
-
-const newStarPlayer1 = new starPlayer();
-
-console.log(newStarPlayer1.description); // it will print description
-console.log(newStarPlayer1.Newdescription); // it will print undefined
-
-//============================
-
-//      Extending  classes
-
-//============================
-
-// by extenting class i can access on class property in another class(fron parent class to child class)
-
-class parentClass {
-  parent = "this is parent class";
+const newPlayer = new NewPlayer('elton', 'steel', 100);
+// its valid syntax
+// ===========================================
+//       getters and setters
+// ===========================================
+class newGamePlayer {
+    constructor(first, last, score) {
+        this.first = first;
+        this.last = last;
+        this.score = score;
+    }
+    get fullName() {
+        return this.first + " " + this.last;
+    }
+    set updateScore(newScore) {
+        if (newScore < 0) {
+            throw new Error("score can not ne negative");
+        }
+        this.score = newScore;
+    }
 }
+const playboy = new newGamePlayer('elton', 'steel', 10);
+console.log(playboy.fullName);
+playboy.updateScore = 99;
+// ===========================================
+//      the protected  modifier
+// ===========================================
+/*
+we have private and public keyword  in class to make them private and public.
 
-class childClass extends parentClass {
-  child = "this is child class";
+private properties in class are only accessable inside itselt . i can not access them outside class.
+But what  if i want to use this class as parent class and want to access its private properties inside only child class.
+its not posssible with child class.
 
-  // this child will have access to properties and methods of parent class
+so what i can do is  , instead of making properties private i can make them protectect . now these protected properties will be
+only accessable inside parent and child class.
+
+to make properties private i just need to use "protected " keyword instead of private.
+
+*/
+// public available anywhere
+// private available only in class itself. only in main class
+// protected abailable in class itself and any other class which is inherited from the main class.
+//===============================================================
+//===============================================================
+//===============================================================
+// 'implements' keyword for using interface in class
+// ================================
+//     Abstract keywords classes
+// ================================
+//  by using abstract keyword in class we can no longer make instances from the class
+// with abstract class we define  methods that must be implemented in the child class
+class Employee {
+    constructor(first, last) {
+        this.first = first;
+        this.last = last;
+    }
+    // every instances/sub classes from emplyee class must have getPay() method
+    greet() {
+        console.log('hello!!');
+    }
 }
-
-// const newChildPlayer = new childClass();
-// console.log(newChildPlayer.child);
-// console.log(newChildPlayer.parent);
-
-//============================
-
-//      super keyword
-
-//============================
+class fullTimeEmployee extends Employee {
+    constructor(first, last, salary) {
+        super(first, last);
+        this.salary = salary;
+    }
+    getPay() {
+        return 12;
+    }
+}
+class PartTimeEmployee extends Employee {
+    getPay() {
+        return 223;
+    }
+}
+const betty = new fullTimeEmployee("Betty", "white", 333);
+console.log(betty.getPay());
