@@ -91,3 +91,133 @@ function getRuntime(media: Movie | TVShow) {
 }
 
 getRuntime({ title: "Amedeus", duration: 120 })
+
+
+
+/* 
+===========================
+     instance of Narrowing
+===========================
+
+instanceof is Javascript operator that alllows uss to checck if one thing is an instance of another thing or not .( remember prototypes?)
+
+This can help us narrow types when woking with things like classes 
+*/
+ 
+function printFullDate(date: Date | string) {
+    if(date instanceof Date) {
+        console.log(date.toUTCString()) 
+    }
+    else {
+        console.log(new Date(date).toUTCString())
+    }
+}
+
+
+// ===================================
+
+class UserPerson {
+    constructor(public username: string){}
+}
+
+
+class Company {
+    constructor (public name : string) {}
+}
+
+
+
+
+/* 
+===========================
+    Type predicates
+===========================
+
+Typescript allows us to write custom functions that can narrow the type of a value These function have a very special return type call a type predicate
+
+A predicate take the form parameterName is Type
+*/
+
+interface Cat {
+    name: string;
+    numLives : number
+}
+
+interface Dog {
+    name: string ,
+    breed: string
+}
+
+
+
+function isCat(animal: Cat | Dog): animal is Cat {
+    return (pet as Dog).bark !== undefined
+}
+
+function makeNoise(animal: Cat | Dog)  {
+    if(isCat(animal)){
+        animal
+        return('meao')
+    } else {
+        animal
+    }
+}
+
+
+
+/* 
+===========================
+    discriminated unions
+===========================
+
+A common pattern in Typescript involes creating a literal property that is common across multiple types.
+
+we can then narrow the type using that literal property
+*/
+
+
+interface Rooster {
+    name: string;
+    weight: number;
+    age:number;
+    kind: "rooster"
+}
+
+interface Cow {
+    name: string;
+    weight: number;
+    age:number;
+    kind: "cow"
+}
+
+interface Pig {
+    name: string;
+    weight: number;
+    age:number;
+    kind: "pig"
+}
+
+type FarmAnimal = Pig | Rooster | Cow 
+
+function getFarmAnimalSound(animal : FarmAnimal) {
+    switch (animal.kind) {
+        case "pig": 
+           return "Oink!";
+        case "cow": 
+            return "Moo!"
+        case "rooster": 
+            return "Cockadoodledoo!!"
+        default : 
+           // we should never make it here , if we handled all case correctly
+           const shouldNevGetHere: never = animal
+    }
+}
+
+
+const stevie: Rooster = {
+      name: 'stevie chicks',
+      weight: 2,
+      age: 1.4,
+      kind : 'rooster'
+}
+
