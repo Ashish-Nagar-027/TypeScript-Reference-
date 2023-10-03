@@ -3,26 +3,24 @@
 //  or its number and always a number . same with other data types
 
 
-// =============================================================
+// =================================
 //        1 . with string
-// =============================================================
-
+// ================================
 
 // We can give types to variables in typescripts like this
 let myName:string = "Ak Nagar";
 
 // we can redefine it with string 
 myName = "Ashish"
+myName = 'blah blah'
 
 // we can not redefine it with number that would be wrong like below example
 // myName = 938 
 
 
-
 // =============================================================
 //                2.  with Numbers and booleans
 // =============================================================
-
 
 // same like strings we can also this with Numbers and booleans
 
@@ -33,15 +31,16 @@ myNumber = 45
 // i can not redefine it again by making it string
 
 
-// with booleans
+//=========== with boolean
 const myBooleans: boolean = false 
 
 // this boolean always going to be boolean
 
 
 
-
-//====================================
+// =======================================
+//                3.  Type any
+// =======================================
 // the any type - with typ e any typescript doesn't check type . 
 
 let thing : any  = "hello world"
@@ -50,5 +49,6 @@ thing = false              // i can only do this with type any
 
 
  
+
 
 
