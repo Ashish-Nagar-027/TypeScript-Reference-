@@ -13,6 +13,17 @@ const dog = {
     age: 0.5
 }
 
+// ex
+let person : {name: string};
+person = {name: 'john'}
+
+//optional property
+let anotherPerson : {name : string, age? : number}
+// using ? with age makes it optional property
+anotherPerson = {name : 'jack'}
+anotherPerson = {name : 'jack', age : 30}
+
+
 // a function with an object type parameter
 function printName(person: {first: string, last: string}): void {
     console.log(`${person.first} ${person.last}`);
