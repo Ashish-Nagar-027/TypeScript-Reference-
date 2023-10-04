@@ -121,7 +121,7 @@ interface Dog {
 }
 
 //  combined interface  with interface 1 and interface 2
-const elton: Dog = {
+const eltons: Dog = {
     name: "Elton",
     age: 0.5,
     breed: "Australian Shepherd",
