@@ -197,3 +197,13 @@ const Human: Engineer  = {
 you can't do that with types
 (although we can use & keyword there )
 */
+
+
+interface practicePerson{
+    name : string;
+    id ? : number;
+    age : number
+}
+
+let p: practicePerson
+p = {name: 'john wick', age: 50 }
