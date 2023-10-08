@@ -154,6 +154,41 @@ It allows you to create reusable components that work with multiple types.
 4. Type aliases
   </font></summary>
  Type aliases allow you to create new types based on existing types. This can be useful for making your code more readable and maintainable.
+
+ <br>
+ Type aliases are similar to interfaces but allow you to name any type, including unions, intersections, and more.
+ 
+ <br>
+
+```
+//example of type aliases
+
+//ex 1
+type Age = number;
+type Name = string;
+type Person = {
+ age: Age,
+ name: Name
+};
+
+//ex 2
+// Creating a type alias
+type Point = {
+ x: number;
+ y: number;
+};
+
+// Using the type alias
+const point: Point = { x: 1, y: 2 };
+
+function printPoint(point: Point) {
+ console.log(`x: ${point.x}, y: ${point.y}`);
+}
+
+printPoint(point);
+
+```
+
 </details>
 
 <details>
