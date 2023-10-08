@@ -7,7 +7,11 @@
 //        1 . with string
 // ================================
 
+// let variable = 'nope'
+// variable = '33'
+
 // We can give types to variables in typescripts like this
+
 let myName:string = "Ak Nagar";
 
 // we can redefine it with string 
