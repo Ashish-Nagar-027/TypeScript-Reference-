@@ -1,4 +1,11 @@
-// Generics allow us to define reusable functions and classes that work with multiple types rather than a single type.
+// Generics in TypeScript are a way to write reusable code that can work with different types of data. This is done by using type parameters, which are placeholders for types that can be specified when the code is used.
+
+// Generics can be used with functions, classes, and interfaces.
+// Generics are defined using type parameters within angle brackets <> after the name of a component (function, class, interface).
+
+// Type parameters act as placeholders for the actual type that will be passed to the component.
+
+// This allows you to create generic components that can work with different data types.
 
 // The syntax is not pretty . they are used all over the place, so it's best to get comforatble with them.
 
@@ -7,7 +14,6 @@
 // array  with this syntax
 const nums : Array<number> = []
 const colorrs : Array<string> = []
-
 
 // in dom elements we can provide this like 
 // 
@@ -22,9 +28,6 @@ const btn = document.querySelector<HTMLButtonElement>('#btn')
 //    writing our first generic fun
 // ==================================
 
-
-
-
 function identity<Type>(item: Type) : Type{
     return item
 }
@@ -32,6 +35,43 @@ function identity<Type>(item: Type) : Type{
 identity<number>(7)
 identity<string>('hello')
 
+
+//===========================
+//interface with generics
+//===========================
+
+
+interface  IAuthor{
+    id: number;
+    username: string
+}
+
+interface  ICategory{
+    id: number;
+    username: string
+}
+
+// without generic
+interface IPost {
+    id: number;
+    title: string;
+    desc: string;
+    extra: IAuthor[] | ICategory[]
+}
+
+// with generic
+interface IPostBetter<T> {
+    id: number;
+    title: string;
+    desc: string;
+    extra: T[]
+}
+const testMe : IPostBetter<string> = {
+    id: 1,
+     title: "Post title",
+     desc: "post desc",
+     extra: ["str", "str2"]
+}
 
 
 
