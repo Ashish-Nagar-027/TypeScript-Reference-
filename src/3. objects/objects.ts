@@ -5,6 +5,26 @@ Accessing a property that isn't defined or performing operations without keeping
 
 */
 
+// creating new object 
+let newUser = {
+    username: "john",
+    age: 22,
+    isAdmin: false
+}
+
+// accessing  objects properties
+newUser.username = "Jack" // works like charm
+
+// newUser.age = "Jack"  // error , its should be number
+
+// newUser.phone = '+1234232'  // error , it's  not available
+
+// reupdate newUser
+newUser = {
+    username : "john",
+    age:23,
+    isAdmin:true
+}
 
 
 const dog = {
