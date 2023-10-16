@@ -97,11 +97,9 @@ const thomasB: PersonB = {
 
 
 
-
-
 /* 
 =============================================
-        combineing or Reopening interface
+        combining or Reopening interface
 =============================================
  
 we can combine interfaces . combined interface will keep all properties
@@ -133,7 +131,7 @@ const eltons: Dog = {
 
 //===============================================
 
-// extend interface - we can extext interface    
+// extend interface - we can extexd interface    
 
 //===============================================
 
