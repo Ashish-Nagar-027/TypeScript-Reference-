@@ -1,5 +1,6 @@
 
 
+
 function square(num: number) {
     // num.toUpperCase() 
     return num * num
@@ -115,3 +116,34 @@ function gameLoop(): never {
     // because of never
 }
 
+
+
+// ==================
+//In above examples i am only using one or two types 
+//but if i have am recieving more parameter than that
+// that giving types to every parameter to directly in
+// function can make your code ugle, 
+// so in that case you should you type alieases (union chapter)
+
+// type aleases
+type userTypes = {
+    username : string,
+    age: number,
+    phone? : string
+}
+
+let betterFun  = (user: userTypes) => {
+     console.log(user.username)
+}
+
+type myFunc = (a: number, b:string) => void 
+// this is function type here which returns nothing
+// i can create different function using it
+
+let write : myFunc = (num,str) => {
+    console.log(num + " times " + str)  
+}
+
+let anotherFun : myFunc = (num, str) => {
+        console.log(num + " times " + str)  
+}
