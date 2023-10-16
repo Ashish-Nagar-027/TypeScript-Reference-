@@ -18,6 +18,12 @@ age = '34'
 age = true
 
 // ex 2
+
+// ================
+  
+//    type aleases
+
+// ====================
 type PointC = {
     x: number;
     y: number;
@@ -52,8 +58,6 @@ function calulateTax(price: number | string, tax: number) {
     }
     return price * tax
 }
-
-
 
 
 
