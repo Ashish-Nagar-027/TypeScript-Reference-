@@ -36,7 +36,8 @@ myNumber = 45
 
 
 //=========== with boolean
-const myBooleans: boolean = false 
+let myBooleans: boolean = true
+myBooleans = false
 
 // this boolean always going to be boolean
 
